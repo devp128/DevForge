@@ -36,6 +36,10 @@ app.use('/api/chat', chatRoutes)
 app.use('/api/sessions', sessionRoutes)
 
 
+app.get('/',(req,res)=>{
+  res.send('Hello from DevForge!')
+})
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB error:', err))

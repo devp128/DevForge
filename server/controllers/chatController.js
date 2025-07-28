@@ -1,5 +1,5 @@
 const Session = require('../db/models/Session')
-const { generateComponent } = require('../utils/openrouter')
+const { generateComponent } = require('../utils/openrouterQwen')
 const { getSessionCache, setSessionCache } = require('../utils/redis')
 
 exports.generateComponent = async (req, res) => {

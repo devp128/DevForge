@@ -18,12 +18,18 @@ exports.generateComponent = async (req, res) => {
       await session.save()
     }
 
-    // Try to get history from Redis cache
-    let fullHistory = await getSessionCache(session._id);
+    // Try to get history from Redis cache, but fall back to MongoDB if Redis is down
+    let fullHistory;
+    try {
+      fullHistory = await getSessionCache(session._id);
+    } catch (e) {
+      console.warn('Redis unavailable, falling back to MongoDB:', e.message);
+      fullHistory = null;
+    }
     if (!fullHistory) {
-      // If not in Redis, use MongoDB and cache it
       fullHistory = session.messages;
-      await setSessionCache(session._id, fullHistory);
+      // Optionally try to set cache if Redis comes back
+      try { await setSessionCache(session._id, fullHistory); } catch {}
     }
 
     // Generate component using AI

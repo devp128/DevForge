@@ -25,7 +25,7 @@ exports.getSessionCache = async (sessionId) => {
   try {
     const client = await getRedisClient();
     const data = await client.get(`session:${sessionId}`);
-     console.log(JSON.parse(data));
+     //console.log(JSON.parse(data));
     return data ? JSON.parse(data) : null;
   } catch (error) {
     console.error('Redis get error:', error);

@@ -13,7 +13,7 @@ async function deleteUserSessions(userId) {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
+ 
   try {
     const result = await Session.deleteMany({ userId });
     console.log(`Deleted ${result.deletedCount} sessions for userId: ${userId}`);

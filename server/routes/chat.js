@@ -17,5 +17,5 @@ router.get('/history/:sessionId', auth, async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch history' })
   }
 })
-
+ 
 module.exports = router

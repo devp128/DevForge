@@ -9,15 +9,15 @@ const sessionRoutes = require('./routes/sessions')
 
 const app = express()
 
-// Render-Alive
-if (process.env.KEEP_ALIVE_URL) {
-  const axios = require('axios');
-  setInterval(() => {
-    axios.get(process.env.KEEP_ALIVE_URL)
-      .then(() => console.log('Website reloaded'))
-      .catch(error => console.error(`Keep-alive error: ${error.message}`));
-  }, 300000); // 5 minutes
-}
+// // Render-Alive
+// if (process.env.KEEP_ALIVE_URL) {
+//   const axios = require('axios');
+//   setInterval(() => {
+//     axios.get(process.env.KEEP_ALIVE_URL)
+//       .then(() => console.log('Website reloaded'))
+//       .catch(error => console.error(`Keep-alive error: ${error.message}`));
+//   }, 300000); // 5 minutes
+// }
 
 
 

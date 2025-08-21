@@ -79,7 +79,7 @@ Example response:
       temperature: 0.3, // Lower for more deterministic output
       max_tokens: 2048
     });
-
+ 
     const raw = data.choices[0].message.content;
     console.log('Raw AI Response:', raw); // Debug log
     let code;

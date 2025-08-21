@@ -6,6 +6,9 @@ import Preview from '../components/Preview'
 import CodeTabs from '../components/CodeTabs'
 import SessionList from '../components/SessionList'
 
+
+
+
 export default function Dashboard() {
   const [currentSession, setCurrentSession] = useState(null)
   const [generatedCode, setGeneratedCode] = useState({ jsx: '', css: '' })
@@ -67,5 +70,8 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+
+
+
   )
 }
